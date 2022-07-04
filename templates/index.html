@@ -6,8 +6,9 @@
 </head>
 <body>
 <h1>Welcome to Text Analyser. Enter your text below</h1>
-<p>I'm made by {{ name }} who lives on {{ place }}</p>
-
+<form action='/removepunc' method='get'>
+    <textarea name='text' style='margin: 0px; width: 721px; height: 93px;'></textarea>
+    <button type='submit'> Analyze Text</button>
 </form>
 </body>
 </html>
