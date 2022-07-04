@@ -20,6 +20,6 @@ def spaceremove(request):
 
 
 def charcount(request):
-    return HttpResponse("charcount ")
+    return HttpResponse("charcount")
 
 
