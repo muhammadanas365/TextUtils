@@ -4,25 +4,9 @@ from django.shortcuts import render
 
 
 def index(request):
-    params = {
-    "name" : "Harry", 
-    "place" : "Mars"}
-    return render(request, 'index.html', params)
+    return render(request, 'index.html')
 
-def removepunc(request):
-    return HttpResponse("remove punc")
-
-def capfirst(request):
-    return HttpResponse("capitalize first")
-
-def newlineremove(request):
-    return HttpResponse("new line")
-
-def spaceremove(request):
-    return HttpResponse("space remover")
-
-
-def charcount(request):
-    return HttpResponse("charcount")
+def analyze(request):
+    return HttpResponse("Analyzed")
 
 
