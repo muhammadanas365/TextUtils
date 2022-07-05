@@ -19,12 +19,30 @@ def analyze(request):
     # Get the filter info from the HTML
     removepunc = request.GET.get('removepunc', 'off')
     fullcaps = request.GET.get('fullcaps', 'off')
+    newlineremover = request.GET.get('newlineremover', 'off')
+    extraspacemover = request.GET.get('extraspacemover', 'off')
+    charactercounter = request.GET.get('charactercounter', 'off')
 
     # Code the logic
     if removepunc == "on":
         analysed = djtext.translate(djtext.maketrans('', '', string.punctuation))
+
     elif fullcaps == "on":
         analysed = djtext.upper()
+
+    elif newlineremover == "on":
+        analysed = djtext.rstrip()
+    
+    elif extraspacemover == "on":
+        analysed = " ".join(djtext.split())
+
+    elif charactercounter == "on":
+        count = 0
+        for char in djtext:
+            if char != " ":
+                count += 1
+        analysed = str(count)
+
     else:
         analysed = djtext
 
