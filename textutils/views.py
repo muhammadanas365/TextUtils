@@ -12,49 +12,41 @@ def home(request):
 
 
 # The Analyse Page LOGIC
-def analyze(request):
+def analyse(request):
     # Get the text
-    djtext = request.GET.get('text', 'default')
+    djtext = request.POST.get('text', 'default')
 
     # Get the filter info from the HTML
-    removepunc = request.GET.get('removepunc', 'off')
-    fullcaps = request.GET.get('fullcaps', 'off')
-    newlineremover = request.GET.get('newlineremover', 'off')
-    extraspacemover = request.GET.get('extraspacemover', 'off')
-    charactercounter = request.GET.get('charactercounter', 'off')
-    countspaceornot = request.GET.get('countspaceornot', 'off')
+    removepunc = request.POST.get('removepunc', 'off')
+    fullcaps = request.POST.get('fullcaps', 'off')
+    newlineremover = request.POST.get('newlineremover', 'off')
+    extraspacemover = request.POST.get('extraspacemover', 'off')
 
-    # Code the logic
+    # Logic
     if removepunc == "on":
         analysed = djtext.translate(djtext.maketrans('', '', string.punctuation))
 
-    elif fullcaps == "on":
+    if fullcaps == "on":
         analysed = djtext.upper()
 
-    elif newlineremover == "on":
-        analysed = djtext.rstrip()
-    
-    elif extraspacemover == "on":
-        analysed = " ".join(djtext.split())
 
-    elif charactercounter == "on":
-        count = 0
+    if(extraspacemover=="on"):
+        analysed = ""
+        for index, char in enumerate(djtext):
+            if not(djtext[index] == " " and djtext[index+1]==" "):
+                analysed = analysed + char
+
+    if (newlineremover == "on"):
+        analysed = ""
         for char in djtext:
-            if countspaceornot == "on":
-                count += 1
-            elif char != " ":
-                count += 1
-        analysed = str(count)
-    else:
-        analysed = djtext
-
-    # The params which are supposed to be passed on the render fucntion so the variables can be accessed in the HTML
-    params = {
-    "purpose" : "Removed Punctuations",
-    "analysed_text" : analysed,
-    }
-
+            if char != "\n" and char!="\r":
+                analysed = analysed + char
+    
     # Render the HTML template
+    params = {
+        "purpose" : "Hey",
+        "analysed_text" : analysed
+    }
     return render(request, "analyse.html", params)
 
 def contact(request):
