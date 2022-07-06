@@ -22,6 +22,7 @@ def analyze(request):
     newlineremover = request.GET.get('newlineremover', 'off')
     extraspacemover = request.GET.get('extraspacemover', 'off')
     charactercounter = request.GET.get('charactercounter', 'off')
+    countspaceornot = request.GET.get('countspaceornot', 'off')
 
     # Code the logic
     if removepunc == "on":
@@ -39,10 +40,11 @@ def analyze(request):
     elif charactercounter == "on":
         count = 0
         for char in djtext:
-            if char != " ":
+            if countspaceornot == "on":
+                count += 1
+            elif char != " ":
                 count += 1
         analysed = str(count)
-
     else:
         analysed = djtext
 
