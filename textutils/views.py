@@ -57,4 +57,7 @@ def analyze(request):
     # Render the HTML template
     return render(request, "analyse.html", params)
 
+def contact(request):
+    return render(request, "contact.html")
+
 
