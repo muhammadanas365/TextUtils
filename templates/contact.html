@@ -9,13 +9,79 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
     <title>Text Utils</title>
+
+    <style>
+        .footer-basic {
+    padding: 40px 0;
+    background-color: #ffffff;
+    color: #4b4c4d;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer-basic .social>a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #457b9d;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic .social>a:hover {
+    opacity: 0.9;
+}
+
+.footer-basic .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 0;
+}
+    </style>
+
 </head>
+
+
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">TextUtils.in</a>
+        <a class="navbar-brand" href="#">TextUtils.ai</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,10 +92,10 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="/contact">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://linktr.ee/muhammadanas0716">Contact Us</a>
+                    <a class="nav-link" href="https://linktr.ee/muhammadanas0716">Connect with ME</a>
                 </li>
 
             </ul>
@@ -37,8 +103,8 @@
     </nav>
 
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Welcome to TextUtils Contact Page!</strong> Feel free to ask anything
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Welcome to TextUtils Contact Page!</strong> Feel free to ask anything. <br> By Muhammad Anas
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
@@ -65,10 +131,24 @@
                 <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="4" placeholder="Your Message!"></textarea>
             </div>
             <div class="col-12 mt-2">
-              <button type="submit" class="btn btn-primary">Enviar!</button>
+              <button type="submit" class="btn btn-success">Enviar!</button>
             </div>
           </form>
     </div>
+
+        <!-- Footer-->
+        <div class="footer-basic">
+            <footer>
+                <div class="social"><a href="https://www.linkedin.com/in/muhammad-anas-63744b235/"><i class="icon ion-social-linkedin"></i></a><a href="https://github.com/muhammadanas365"><i class="icon ion-social-github"></i></a>
+                    <a href="https://twitter.com/Muhamma63227121"><i class="icon ion-social-twitter"></i></a>
+                </div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/">Home</a></li>
+                    <li class="list-inline-item"><a href="/contact">Contact</a></li>
+                </ul>
+                <p class="copyright">TextUtils.ai © 2022</p>
+            </footer>
+        </div>
 
 
     <!-- Optional JavaScript -->
